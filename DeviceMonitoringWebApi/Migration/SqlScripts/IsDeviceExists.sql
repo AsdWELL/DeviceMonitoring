@@ -1,4 +1,4 @@
 SELECT EXISTS (
-	SELECT 1 FROM device_sessions
-	WHERE device_id = @DeviceId
+	SELECT 1 FROM "DeviceSessions"
+	WHERE "DeviceId" = @DeviceId
 );

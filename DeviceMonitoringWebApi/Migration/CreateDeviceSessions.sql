@@ -1,8 +1,8 @@
-CREATE TABLE IF NOT EXISTS device_sessions (
-	id SERIAL PRIMARY KEY,
-	device_id TEXT NOT NULL,
-	name TEXT NOT NULL,
-	start_time TIMESTAMP NOT NULL,
-	end_time TIMESTAMP NOT NULL,
-	version TEXT NOT NULL
+CREATE TABLE IF NOT EXISTS "DeviceSessions" (
+	"Id" SERIAL PRIMARY KEY,
+	"DeviceId" TEXT NOT NULL,
+	"Name" TEXT NOT NULL,
+	"StartTime" TIMESTAMP NOT NULL,
+	"EndTime" TIMESTAMP NOT NULL,
+	"Version" TEXT NOT NULL
 );

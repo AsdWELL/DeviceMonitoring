@@ -61,10 +61,10 @@ namespace DeviceMonitoringWebApi.Migration {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на SELECT DISTINCT ON (device_id)
-        ///    device_id, name, start_time, end_time, version
-        ///FROM device_sessions
-        ///ORDER BY device_id, end_time DESC;.
+        ///   Ищет локализованную строку, похожую на SELECT DISTINCT ON (&quot;DeviceId&quot;)
+        ///    &quot;Id&quot;, &quot;DeviceId&quot;, &quot;Name&quot;, &quot;StartTime&quot;, &quot;EndTime&quot;, &quot;Version&quot;
+        ///FROM &quot;DeviceSessions&quot;
+        ///ORDER BY &quot;DeviceId&quot;, &quot;EndTime&quot; DESC;.
         /// </summary>
         internal static string GetAllDevices {
             get {
@@ -73,10 +73,10 @@ namespace DeviceMonitoringWebApi.Migration {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на SELECT id, device_id, name, start_time, end_time, version
-        ///FROM device_sessions
-        ///WHERE device_id = @DeviceId
-        ///ORDER BY start_time;.
+        ///   Ищет локализованную строку, похожую на SELECT &quot;Id&quot;, &quot;DeviceId&quot;, &quot;Name&quot;, &quot;StartTime&quot;, &quot;EndTime&quot;, &quot;Version&quot;
+        ///FROM &quot;DeviceSessions&quot;
+        ///WHERE &quot;DeviceId&quot; = @DeviceId
+        ///ORDER BY &quot;StartTime&quot;;.
         /// </summary>
         internal static string GetSessionsByDeviceId {
             get {
@@ -85,10 +85,10 @@ namespace DeviceMonitoringWebApi.Migration {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на INSERT INTO device_sessions (device_id, name, start_time, end_time, version)
+        ///   Ищет локализованную строку, похожую на INSERT INTO &quot;DeviceSessions&quot; (&quot;DeviceId&quot;, &quot;Name&quot;, &quot;StartTime&quot;, &quot;EndTime&quot;, &quot;Version&quot;)
         ///VALUES
         ///	(@DeviceId, @Name, @StartTime, @EndTime, @Version)
-        ///RETURNING id;.
+        ///RETURNING &quot;Id&quot;;.
         /// </summary>
         internal static string InsertDeviceSession {
             get {
@@ -98,8 +98,8 @@ namespace DeviceMonitoringWebApi.Migration {
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на SELECT EXISTS (
-        ///	SELECT 1 FROM device_sessions
-        ///	WHERE device_id = @DeviceId
+        ///	SELECT 1 FROM &quot;DeviceSessions&quot;
+        ///	WHERE &quot;DeviceId&quot; = @DeviceId
         ///);.
         /// </summary>
         internal static string IsDeviceExists {

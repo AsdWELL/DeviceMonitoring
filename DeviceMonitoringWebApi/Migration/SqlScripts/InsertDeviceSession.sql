@@ -1,4 +1,4 @@
-INSERT INTO device_sessions (device_id, name, start_time, end_time, version)
+INSERT INTO "DeviceSessions" ("DeviceId", "Name", "StartTime", "EndTime", "Version")
 VALUES
 	(@DeviceId, @Name, @StartTime, @EndTime, @Version)
-RETURNING id;
+RETURNING "Id";
