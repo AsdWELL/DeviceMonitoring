@@ -1,11 +1,7 @@
-﻿namespace DeviceMonitoringWebApi.Entities
+﻿namespace DeviceMonitoringWebApi.Dto
 {
-    public class DeviceSession
+    public class DeviceSessionResponse
     {
-        public int Id { get; set; }
-
-        public string DeviceId { get; set; }
-
         public string Name { get; set; }
 
         public DateTime StartTime { get; set; }
