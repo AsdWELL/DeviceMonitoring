@@ -32,7 +32,7 @@ namespace DeviceMonitoringWebApi.Services
         {
             var devices = await deviceSessionRepository.GetAllDevices();
 
-            logger.LogInformation($"Получен список устройств. Всего найдено ${devices.Count} устройств");
+            logger.LogInformation($"Получен список устройств. Всего найдено {devices.Count} устройств");
 
             return [.. devices.Select(device => device.ToDeviceInfoResponse())];
         }
@@ -44,7 +44,7 @@ namespace DeviceMonitoringWebApi.Services
             var sessionHistory = await deviceSessionRepository.GetDeviceSessionsByDeviceId(deviceId);
 
             logger.LogInformation($"Получена история сессия для устройства {deviceId}." +
-                $" Найдено ${sessionHistory.Count} записей");
+                $" Найдено {sessionHistory.Count} записей");
 
             return [.. sessionHistory.Select(session => session.ToDeviceSessionResponse())];
         }
