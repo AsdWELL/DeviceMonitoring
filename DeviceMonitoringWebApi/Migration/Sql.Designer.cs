@@ -74,6 +74,16 @@ namespace DeviceMonitoringWebApi.Migration {
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на SELECT &quot;Id&quot;, &quot;DeviceId&quot;, &quot;Name&quot;, &quot;StartTime&quot;, &quot;EndTime&quot;, &quot;Version&quot;
+        ///FROM &quot;DeviceSessions&quot;;.
+        /// </summary>
+        internal static string GetAllSessions {
+            get {
+                return ResourceManager.GetString("GetAllSessions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на SELECT &quot;Id&quot;, &quot;DeviceId&quot;, &quot;Name&quot;, &quot;StartTime&quot;, &quot;EndTime&quot;, &quot;Version&quot;
         ///FROM &quot;DeviceSessions&quot;
         ///WHERE &quot;DeviceId&quot; = @DeviceId
         ///ORDER BY &quot;StartTime&quot;;.

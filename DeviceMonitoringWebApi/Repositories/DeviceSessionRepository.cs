@@ -18,6 +18,11 @@ namespace DeviceMonitoringWebApi.Repositories
             return [.. await dbConnection.QueryAsync<DeviceSession>(Sql.GetAllDevices)];
         }
 
+        public async Task<List<DeviceSession>> GetAllSessions()
+        {
+            return [.. await dbConnection.QueryAsync<DeviceSession>(Sql.GetAllSessions)];
+        }
+
         public async Task<List<DeviceSession>> GetDeviceSessionsByDeviceId(string deviceId)
         {
             return [.. await dbConnection.QueryAsync<DeviceSession>(Sql.GetSessionsByDeviceId,

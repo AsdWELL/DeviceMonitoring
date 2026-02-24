@@ -8,6 +8,8 @@ namespace DeviceMonitoringWebApi.Repositories.Interfaces
 
         Task<List<DeviceSession>> GetAllDevices();
 
+        Task<List<DeviceSession>> GetAllSessions();
+
         Task<bool> IsDeviceExists(string deviceId);
 
         Task<List<DeviceSession>> GetDeviceSessionsByDeviceId(string deviceId);

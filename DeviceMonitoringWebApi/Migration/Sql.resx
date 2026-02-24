@@ -121,6 +121,9 @@
   <data name="GetAllDevices" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SqlScripts\GetAllDevices.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
+  <data name="GetAllSessions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>SqlScripts\GetAllSessions.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
+  </data>
   <data name="GetSessionsByDeviceId" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>SqlScripts\GetSessionsByDeviceId.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1251</value>
   </data>
