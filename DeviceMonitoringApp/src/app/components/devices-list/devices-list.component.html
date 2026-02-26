@@ -1,0 +1,22 @@
+<div class="devices-list-container">
+    <h1>Устройства</h1>
+
+    <app-loader *ngIf="isLoading" />
+
+    <div *ngIf="error" class="error-message">
+        <p> {{error}} </p>
+        <button (click)="loadDevices()">Попробовать снова</button>
+    </div>
+
+    <div *ngIf="!isLoading && !error && devices.length === 0" class="empty-state">
+        <p>Устройства не найдены</p>
+    </div>
+
+    <div *ngIf="!isLoading && !error && devices.length > 0" class="devices-grid">
+        <div *ngFor="let device of devices; trackBy: trackDeviceId" class="device-card"
+            [routerLink]="['/device', device.deviceId]">
+            <h3> {{device.name}} </h3>
+            <p class="device-id">ID: {{device.deviceId}} </p>
+            <p class="last-seen">Последняя сессия: {{formatDate(device.lastSession)}}</p>
+        </div>
+    </div>

@@ -1,0 +1,41 @@
+<div class="device-detail-container">
+    <div class="header">
+        <a routerLink="/devices" class="back-link">Назад к списку</a>
+        <h1>История сессий устройства</h1>
+        <p class="device-id">ID: {{deviceId}} </p>
+    </div>
+
+    <app-loader *ngIf="isLoading"></app-loader>
+
+    <div *ngIf="error" class="error-message">
+        <p>{{ error }}</p>
+        <button (click)="loadSessions()">Попробовать снова</button>
+    </div>
+
+    <div *ngIf="!isLoading && !error && sessions.length === 0" class="empty-state">
+        <p>Сессии не найдены</p>
+    </div>
+
+    <div *ngIf="!isLoading && !error && sessions.length > 0" class="sessions-table-container">
+        <table class="sessions-table">
+            <thead>
+                <tr>
+                    <th>Имя пользователя</th>
+                    <th>Версия</th>
+                    <th>Начало сессии</th>
+                    <th>Конец сессии</th>
+                    <th>Длительность</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let session of sessions; trackBy: trackSessionId">
+                    <td class="name-column"> {{session.name}} </td>
+                    <td> {{session.version}} </td>
+                    <td> {{formatDate(session.startTime)}} </td>
+                    <td> {{formatDate(session.endTime)}} </td>
+                    <td> {{getSessionDuration(session.startTime, session.endTime)}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

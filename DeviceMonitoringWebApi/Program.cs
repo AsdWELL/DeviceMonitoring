@@ -15,6 +15,14 @@ builder.Services.AddControllers(options => options.Filters.Add<ExceptionFilter>(
 
 var app = builder.Build();
 
+app.UseCors(cors =>
+{
+    cors.WithOrigins("http://localhost:4200")
+        .AllowAnyMethod()
+        .AllowAnyHeader()
+        .AllowCredentials();
+});
+
 app.UseSwagger()
     .UseSwaggerUI(options =>
     {
