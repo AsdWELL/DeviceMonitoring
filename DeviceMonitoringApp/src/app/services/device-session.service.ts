@@ -2,13 +2,14 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { catchError, Observable, throwError } from "rxjs";
 import { DeviceInfo, DeviceSession } from "../models/device.models";
+import { environment } from "../../environment/environment";
 
 @Injectable({
     providedIn: 'root'
 })
 export class DeviceSessionService {
     private readonly http = inject(HttpClient);
-    private readonly apiUrl = "http://localhost:5247/api/devicesession";
+    private readonly apiUrl = `${environment.apiUrl}/devicesession`;
 
     private handleError(error: HttpErrorResponse): Observable<never> {
         console.error(error.message);

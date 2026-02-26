@@ -1,4 +1,15 @@
 services:
+  devicemonitoringapp:
+    image: ${DOCKER_REGISTRY-}devicemonitoringapp
+    build:
+      context: ./DeviceMonitoringApp
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      devicemonitoringwebapi:
+        condition: service_started
+
   devicemonitoringwebapi:
     image: ${DOCKER_REGISTRY-}devicemonitoringwebapi
     build:
