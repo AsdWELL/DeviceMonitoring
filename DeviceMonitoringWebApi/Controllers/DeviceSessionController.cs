@@ -11,7 +11,7 @@ namespace DeviceMonitoringWebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> AddDeviceSession(CreateDeviceSessionRequest request)
         {
-            return Ok(await deviceSessionService.AddDeviceSession(request));
+            return Ok(new { Id = await deviceSessionService.AddDeviceSession(request) });
         }
 
         [HttpGet("devices")]

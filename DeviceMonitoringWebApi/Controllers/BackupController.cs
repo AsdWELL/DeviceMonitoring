@@ -10,7 +10,7 @@ namespace DeviceMonitoringWebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateBackup()
         {
-            return Ok(await backupService.CreateBackup());
+            return Ok(new { FileName = await backupService.CreateBackup() });
         }
 
         [HttpGet]
